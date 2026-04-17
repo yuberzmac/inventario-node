@@ -1,10 +1,11 @@
 :root {
-    --primary: #004a99;
-    --secondary: #ff6600;
-    --dark: #1a1a1a;
+    --primary: #003366;
+    --secondary: #e65c00;
+    --dark: #121212;
     --light: #f4f4f4;
     --white: #ffffff;
     --gray: #666666;
+    --accent: #25d366;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
