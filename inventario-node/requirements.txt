@@ -1,0 +1,6 @@
+# Dependencias del proyecto yubertec (Node.js)
+express
+mysql2
+cors
+body-parser
+nodemon (dev)
