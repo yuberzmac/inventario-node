@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas | Tecnopiezas</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="admin-body">
+    <nav class="sidebar">
+        <div class="sidebar-header">TECNOPANEL</div>
+        <ul class="sidebar-links">
+            <li><a href="../index.html"><i class="fas fa-home"></i> Ver Tienda</a></li>
+            <li><a href="inventory.html"><i class="fas fa-boxes"></i> Inventario</a></li>
+            <li><a href="analytics.html" class="active"><i class="fas fa-chart-line"></i> Estadísticas</a></li>
+            <li><a href="soporte.html"><i class="fas fa-headset"></i> Soporte</a></li>
+        </ul>
+    </nav>
+    <div class="panel-content">
+        <h1>Análisis de Stock en Tiempo Real</h1>
+        <div class="chart-container" style="background:white; padding:2rem; border-radius:12px; margin-top:2rem;">
+            <canvas id="stockChart"></canvas>
+        </div>
+    </div>
+    <script>
+        fetch('/api/productos')
+            .then(res => res.json())
+            .then(data => {
+                const ctx = document.getElementById('stockChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.map(p => p.nombre),
+                        datasets: [{
+                            label: 'Cantidad en Stock',
+                            data: data.map(p => p.stock),
+                            backgroundColor: '#ff6600'
+                        }]
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

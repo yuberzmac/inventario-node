@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnopiezas | Repuestos para Laptops</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container-wide">
+            <span><i class="fas fa-phone-alt"></i> 998 113 815</span>
+            <span><i class="fas fa-envelope"></i> ventas@tecnopiezas.com.pe</span>
+        </div>
+    </div>
+
+    <!-- Header Principal -->
+    <header class="main-header">
+        <div class="container-wide header-grid">
+            <div class="logo">
+                <i class="fas fa-laptop-medical"></i> TECNOPIEZAS
+            </div>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Buscar productos por nombre...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <a href="admin.html" class="admin-access"><i class="fas fa-user-shield"></i> Admin</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación -->
+    <nav class="nav-menu">
+        <div class="container-wide">
+            <ul>
+                <li><a href="#" class="active">Inicio</a></li>
+                <li><a href="#">Categorías</a></li>
+                <li><a href="#">Marcas</a></li>
+                <li><a href="#">Soporte Técnico</a></li>
+                <li><a href="#">Información</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner Principal -->
+    <section class="hero-banner">
+        <div class="hero-overlay">
+            <h1>Venta de repuestos para laptops</h1>
+            <p>Disponibilidad inmediata en las mejores marcas del mercado</p>
+        </div>
+    </section>
+
+    <!-- Categorías Rápidas -->
+    <section class="categories-section container-wide">
+        <h2 class="section-title">Repuestos más buscados</h2>
+        <div class="categories-grid">
+            <div class="cat-item"><i class="fas fa-laptop"></i><span>Laptops</span></div>
+            <div class="cat-item"><i class="fas fa-keyboard"></i><span>Teclados</span></div>
+            <div class="cat-item"><i class="fas fa-desktop"></i><span>Pantallas</span></div>
+            <div class="cat-item"><i class="fas fa-battery-full"></i><span>Baterías</span></div>
+            <div class="cat-item"><i class="fas fa-plug"></i><span>Cargadores</span></div>
+            <div class="cat-item"><i class="fas fa-project-diagram"></i><span>Bisagras</span></div>
+        </div>
+    </section>
+
+    <!-- Catálogo de Productos -->
+    <main class="store-container container-wide">
+        <h2 class="section-title">Productos en Stock (Sincronizado VPS)</h2>
+        <div class="products-grid" id="products-grid">
+            <!-- Los productos de la VPS se cargarán aquí -->
+        </div>
+    </main>
+
+    <!-- Footer Profesional -->
+    <footer class="main-footer">
+        <div class="container-wide footer-grid">
+            <div class="footer-about">
+                <h3>TECNOPIEZAS</h3>
+                <p>Empresa especializada en venta de repuestos para laptops en las mejores marcas del mercado.</p>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>REPUESTOS</h4>
+                <ul>
+                    <li>Teclados</li>
+                    <li>Pantallas</li>
+                    <li>Baterías</li>
+                    <li>Covers</li>
+                    <li>Cargadores</li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>DATOS DE CONTACTO</h4>
+                <p><i class="fas fa-phone"></i> 998 113 815</p>
+                <p><i class="fas fa-envelope"></i> ventas@tecnopiezas.com.pe</p>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Alfredo Benavides 1850 Int. 601. Miraflores, Lima</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tecnopiezas - Todos los Derechos Reservados</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

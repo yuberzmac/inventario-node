@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Inventario | Tecnopiezas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="admin-body">
+    <nav class="sidebar">
+        <div class="sidebar-header">TECNOPANEL</div>
+        <ul class="sidebar-links">
+            <li><a href="../index.html"><i class="fas fa-home"></i> Ver Tienda</a></li>
+            <li><a href="inventory.html" class="active"><i class="fas fa-boxes"></i> Inventario</a></li>
+            <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Estadísticas</a></li>
+            <li><a href="soporte.html"><i class="fas fa-headset"></i> Soporte</a></li>
+        </ul>
+    </nav>
+
+    <div class="panel-content">
+        <header class="panel-header">
+            <div>
+                <h1>Gestión de Inventario</h1>
+                <p style="color: #666;">Control centralizado de repuestos en VPS</p>
+            </div>
+            <div class="user-info">
+                <span>Administrador</span>
+                <img src="https://ui-avatars.com/api/?name=Admin+Tecnopiezas&background=004a99&color=fff" alt="Avatar">
+            </div>
+        </header>
+
+        <!-- Tarjetas de Resumen (KPIs) -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #e0e7ff; color: #4338ca;"><i class="fas fa-box"></i></div>
+                <div class="stat-info">
+                    <h3 id="stat-total-items">0</h3>
+                    <p>Total Repuestos</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #dcfce7; color: #15803d;"><i class="fas fa-coins"></i></div>
+                <div class="stat-info">
+                    <h3 id="stat-total-value">S/. 0.00</h3>
+                    <p>Valor de Almacén</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #fee2e2; color: #b91c1c;"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="stat-info">
+                    <h3 id="stat-low-stock">0</h3>
+                    <p>Stock Crítico</p>
+                </div>
+            </div>
+        </div>
+
+        <main class="panel-grid">
+            <!-- Formulario Lateral -->
+            <section class="form-card">
+                <h2><i class="fas fa-edit"></i> Editor de Producto</h2>
+                <form id="producto-form">
+                    <input type="hidden" id="producto-id">
+                    <div class="input-group">
+                        <label>Nombre del Repuesto</label>
+                        <input type="text" id="nombre" placeholder="Ej. Pantalla LED 14.0" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Categoría</label>
+                        <select id="categoria">
+                            <option value="Laptops">Laptops</option>
+                            <option value="Teclados">Teclados</option>
+                            <option value="Pantallas">Pantallas</option>
+                            <option value="Baterías">Baterías</option>
+                            <option value="Cargadores">Cargadores</option>
+                            <option value="Bisagras">Bisagras</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <label>Precio (S/.)</label>
+                            <input type="number" step="0.01" id="precio" placeholder="0.00" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Stock</label>
+                            <input type="number" id="stock" placeholder="0" required>
+                        </div>
+                    </div>
+                    <button type="submit" id="btn-submit" class="btn-primary">Actualizar VPS</button>
+                    <button type="button" id="btn-cancel" class="btn-secondary" style="display:none; margin-top: 10px;">Cancelar Edición</button>
+                </form>
+            </section>
+
+            <!-- Tabla con Buscador -->
+            <section class="table-card">
+                <div class="table-header-tools">
+                    <h2><i class="fas fa-list"></i> Lista de Productos</h2>
+                    <div class="table-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="table-filter" placeholder="Filtrar por nombre...">
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Detalle</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productos-tabla">
+                            <!-- Datos cargados dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="inventory.js"></script>
+</body>
+</html>

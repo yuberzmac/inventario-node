@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=136.248.247.250
+      - DB_USER=mysql
+      - DB_PASS=123456
+      - DB_NAME=inventario
+    restart: always
