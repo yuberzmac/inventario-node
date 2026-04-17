@@ -77,17 +77,28 @@ form.addEventListener('submit', async (e) => {
     const method = id ? 'PUT' : 'POST';
     const url = id ? `${API_URL}/${id}` : API_URL;
 
-    await fetch(url, {
-        method,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-    });
+    try {
+        const response = await fetch(url, {
+            method,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
 
-    form.reset();
-    document.getElementById('producto-id').value = '';
-    document.getElementById('btn-cancel').style.display = 'none';
-    document.getElementById('btn-submit').textContent = 'Guardar en VPS';
-    fetchProducts();
+        if (response.ok) {
+            alert("✅ Producto subido con éxito");
+            form.reset();
+            document.getElementById('producto-id').value = '';
+            document.getElementById('btn-cancel').style.display = 'none';
+            document.getElementById('btn-submit').textContent = 'Guardar en VPS';
+            fetchProducts();
+        } else {
+            const errorData = await response.json();
+            alert("❌ Error al subir el producto: " + (errorData.message || "Error del servidor"));
+        }
+    } catch (error) {
+        console.error("Error en la petición:", error);
+        alert("⚠️ Error al conectar con la base de datos (VPS)");
+    }
 });
 
 async function deleteP(id) {

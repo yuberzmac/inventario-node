@@ -12,8 +12,8 @@
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container-wide">
-            <span><i class="fas fa-phone-alt"></i> 998 113 815</span>
-            <span><i class="fas fa-envelope"></i> ventas@tecnopiezas.com.pe</span>
+            <span><i class="fas fa-phone-alt"></i> 987654321</span>
+            <span><i class="fas fa-envelope"></i> yubertec@yubertec.com.pe</span>
         </div>
     </div>
 
@@ -21,7 +21,7 @@
     <header class="main-header">
         <div class="container-wide header-grid">
             <div class="logo">
-                <i class="fas fa-laptop-medical"></i> TECNOPIEZAS
+                <i class="fas fa-laptop-medical"></i> yubertec
             </div>
             <div class="search-box">
                 <input type="text" id="search-input" placeholder="Buscar productos por nombre...">
@@ -29,9 +29,28 @@
             </div>
             <div class="header-actions">
                 <a href="admin.html" class="admin-access"><i class="fas fa-user-shield"></i> Admin</a>
+                <div class="cart-container" id="cart-toggle">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- Modal del Carrito -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-cart">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items">
+                <!-- Items del carrito se cargarán aquí -->
+            </div>
+            <div class="cart-total">
+                Total: <span id="cart-total-price">S/. 0.00</span>
+            </div>
+            <button id="checkout-btn" class="btn-checkout">Comprar ahora</button>
+        </div>
+    </div>
 
     <!-- Navegación -->
     <nav class="nav-menu">
